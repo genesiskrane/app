@@ -22,11 +22,11 @@ app.use(cors());
 app.use(morgan("tiny"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static(path.join(__dirname, "app", "client", "dist")));
+app.use(express.static(path.join(__dirname, "client", "dist")));
 
 // Catch All
 app.all("/{*any}", (req, res) => {
-	res.sendFile(path.join(__dirname, "app", "client", "dist", "index.html"));
+	res.sendFile(path.join(__dirname, "client", "dist", "index.html"));
 });
 
 (async () => {
